@@ -22,13 +22,14 @@ Add a visci.json to an analysis folder:
       ]
 
 
+###### 1. Provide data
 Within the folder, have your pipeline generate some input data files in a subfolder called "data," or just add them as static files to the repo. If you want the data generated dynamically (and you don't have a pipeline), add a script called "run.py" into the folder. If found, it will be run to generate the data.
 
+###### 2. Visualization Template
 Generate some template visualization file. It should take (somewhere) as input a link to one of your data files. Specify this file with the tag {{data}} in the template, and specify the template name in the visci.json.
 
-Add visci to your requirements.txt. It is a [python package](https://pypi.python.org/pypi/visci).
-
-Add a line to your circle.yml (or travis.yml) under the test section:
+###### 3. Include Viscii
+Add visci to your requirements.txt. It is a [python package](https://pypi.python.org/pypi/visci), and add a line to your circle.yml (or travis.yml) under the test section:
 
       test:
         override:
