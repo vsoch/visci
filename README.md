@@ -7,7 +7,36 @@ Setting up `visci` integration into your repo should be as simple as dropping co
 
 Visci is also agnostic to the formats of your inputs, and your visualizations. The only requirement is that your template is a web-based thing (.html, ipython notebook will be supported soon), and that a single input data file is specified in your template (to be read in as a file) using the {{data}} tag.
 
-An example repo is [visualization-ci]() to render d3 trees for Cognitive Atlas tasks.
+### Setting up a Repo
+
+1. Add a visci.json to an analysis folder:
+
+      [
+            {
+                "name": "Cognitive Atlas Hierarchy Visualization",
+                "template": "template.html",
+                "tag": "cognitiveatlas",
+                "author": "Vanessa Sochat", 
+                "publish":"True"    
+            }
+      ]
+
+
+2. Within the folder, have your pipeline generate some input data files in a subfolder called "data," or just add them as static files to the repo. If you want the data generated dynamically (and you don't have a pipeline), add a script called "run.py" into the folder. If found, it will be run to generate the data.
+
+3. Generate some template visualization file. It should take (somewhere) as input a link to one of your data files. Specify this file with the tag {{data}}.
+
+4. Add visci to your requirements.txt. It is a [python package](https://pypi.python.org/pypi/visci).
+
+5. Add a line to your circle.yml (or travis.yml) under the test section:
+
+      test:
+        override:
+          - python -c "from visci.app import run; run()"
+
+
+An example repo is [visualization-ci](https://github.com/vsoch/visualization-ci) to render d3 trees for Cognitive Atlas tasks.
+
 
 #### File Structure
 
