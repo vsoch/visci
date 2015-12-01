@@ -5,7 +5,7 @@ setup(
     name="visci",
 
     # Version number (initial):
-    version="0.0.2",
+    version="0.0.3",
 
     # Application author details:
     author="Vanessa Sochat",
@@ -15,7 +15,7 @@ setup(
     packages=find_packages(),
 
     # Data
-    package_data = {'visci.templates':['*.html']},
+    package_data = {'visci':['templates/*.html']},
 
     # Details
     url="http://www.github.com/vsoch/visualization-ci",
