@@ -9,7 +9,7 @@ Visci is also agnostic to the formats of your inputs, and your visualizations. T
 
 ### Setting up a Repo
 
-1. Add a visci.json to an analysis folder:
+Add a visci.json to an analysis folder:
 
       [
             {
@@ -22,13 +22,13 @@ Visci is also agnostic to the formats of your inputs, and your visualizations. T
       ]
 
 
-2. Within the folder, have your pipeline generate some input data files in a subfolder called "data," or just add them as static files to the repo. If you want the data generated dynamically (and you don't have a pipeline), add a script called "run.py" into the folder. If found, it will be run to generate the data.
+Within the folder, have your pipeline generate some input data files in a subfolder called "data," or just add them as static files to the repo. If you want the data generated dynamically (and you don't have a pipeline), add a script called "run.py" into the folder. If found, it will be run to generate the data.
 
-3. Generate some template visualization file. It should take (somewhere) as input a link to one of your data files. Specify this file with the tag {{data}}.
+Generate some template visualization file. It should take (somewhere) as input a link to one of your data files. Specify this file with the tag {{data}} in the template, and specify the template name in the visci.json.
 
-4. Add visci to your requirements.txt. It is a [python package](https://pypi.python.org/pypi/visci).
+Add visci to your requirements.txt. It is a [python package](https://pypi.python.org/pypi/visci).
 
-5. Add a line to your circle.yml (or travis.yml) under the test section:
+Add a line to your circle.yml (or travis.yml) under the test section:
 
       test:
         override:
