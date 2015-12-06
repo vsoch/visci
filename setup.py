@@ -5,7 +5,7 @@ setup(
     name="visci",
 
     # Version number (initial):
-    version="0.8",
+    version="1.0",
 
     # Application author details:
     author="Vanessa Sochat",
